@@ -1,4 +1,5 @@
 import { get, includes, isEmpty } from 'lodash'
+import Image from 'next/image'
 
 const notAvailableMedia = [ 'video/mp4', 'audio/mpeg', 'audio/wav', 'video/quicktime', 'application/pdf' ];
 
@@ -50,8 +51,8 @@ export default function CardView({data, index, source}) {
 					<div className="relative pb-48 overflow-hidden" key={get(data, 'meta.name')}>
 						{
 							(includes( notAvailableMedia, get(data, 'meta.mimeType')) || isEmpty(get(data, 'meta.mimeType'))) ?
-							<img className="absolute inset-0 h-full w-full object-contain" src={"https://drive.google.com/uc?id=1vZMp66wQneoaX-E60yoRz6BuJsNfAKOJ"} alt=""/> :
-							<img className="absolute inset-0 h-full w-full object-contain" src={data.contentURI} alt=""/>
+							<Image className="absolute inset-0 h-full w-full object-contain" src={"https://drive.google.com/uc?id=1vZMp66wQneoaX-E60yoRz6BuJsNfAKOJ"} alt="" layout="fill"/> :
+							<Image className="absolute inset-0 h-full w-full object-contain" src={data.contentURI} alt="" layout="fill"/>
 						}
 					</div>
 					<div className="p-4">
