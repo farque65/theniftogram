@@ -22,7 +22,7 @@ export default function Home(props) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
               {
                 props.tokens.map((nft, i) => (
-                  <CardView data={nft} index={i} source={source} />
+                  <CardView data={nft} index={i} source={source} key={i} />
                 ))
               }
             </div>
@@ -101,7 +101,6 @@ export async function fetchData() {
         try {
           const metaData = await fetch(token.metadataURI)
           let response = await metaData.json()
-          console.log('view response ', response);
           meta = response
         } catch (err) {
         }
@@ -124,14 +123,13 @@ export async function fetchData() {
     ///FND
     if (source === 'fnd') {
       tokenData = await Promise.all(data.data.nftMarketAuctions.map(async token=> {
-        console.log('view tokenData ', token);
         let meta;
         try {
           const metaData = await fetch(`https://ipfs.io/ipfs/${token.nft.tokenIPFSPath}`);
           let response = await metaData.json()
           meta = response
         } catch (err) {
-          console.log('Error: ', err);
+          console.error('Error: ', err);
         }
         if (!meta) return
         const mimeType = get(meta, 'mimeType');

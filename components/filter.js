@@ -1,7 +1,6 @@
 const filters = [
-	{name: 'Zora', link: ''},
-	{name: 'Rarible', link: ''},
-	{name: 'Open Sea', link: ''}
+	{name: 'Zora' },
+	{name: 'Foundation' }
 ]
 
 export default function Filter() {
@@ -16,6 +15,7 @@ export default function Filter() {
 					{
 						filters.map((filter)=> (
 							<button
+							key={filter.name}
 								type="button"
 								className="m-3 w-full justify-center rounded-md shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-400 hover:text-black hover:bg-yellow-500 sm:mt-0 sm:ml-3 sm:text-sm"
 								// onClick={closesignonmodal}

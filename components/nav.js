@@ -58,7 +58,7 @@ export default function Nav() {
               </div>
               <div className="hidden md:block">
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                  <Link key="navfaq" href="/faq">
+                  <Link href="/faq">
                     <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-green-500">   
                       <AnnotationIcon className="h-8 w-8 rounded-full" aria-hidden="true" />
                     </button>
