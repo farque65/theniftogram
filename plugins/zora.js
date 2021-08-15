@@ -66,7 +66,7 @@ export async function ZoraFetchData() {
         }
         token.meta = meta
         token.link = `https://zora.co/${token.creator.id}/${token.id}`
-        console.log('view data ', token);
+        // console.log('view data ', token);
         return token;
       }))
 	return tokenData;

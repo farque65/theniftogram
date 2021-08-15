@@ -3,8 +3,12 @@ import { Fragment, useState, useEffect } from 'react'
 import { Transition, Dialog } from '@headlessui/react'
 import { XIcon, CameraIcon, FilterIcon, AnnotationIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import Filter from './filter'
 import Signin from './signin'
+
+const filters = [
+	{name: 'Zora', query: 'zora' },
+	{name: 'Foundation', query: 'fnd' }
+]
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -116,7 +120,35 @@ export default function Nav() {
                                       </div>
                                     </Transition.Child>
                                     <div className="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
-                                      <Filter />
+                                      <div className="mt-6 relative flex-1 px-4 sm:px-6">
+                                        {/* Replace with your content */}
+                                        <div className="absolute inset-0 px-4 sm:px-6">
+                                          <div className="h-full justify-center" aria-hidden="true" >
+                                            <div className="my-4 border-b w-full">
+                                                        <h2 className="font-semibold text-lg text-center">Marketplaces</h2>
+                                                    </div>
+                                              {
+                                                filters.map((filter)=> (
+                                                  <Link key="home" href={{ 
+                                                    pathname: '/',
+                                                    query: { data: filter.query } }}
+                                                    passHref={true}
+                                                  >
+                                                    <button
+                                                      key={filter.name}
+                                                      type="button"
+                                                      className="m-3 w-full justify-center rounded-md shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-400 hover:text-black hover:bg-yellow-500 sm:mt-0 sm:ml-3 sm:text-sm"
+                                                      onClick={() => setOpen(false)}
+                                                  >
+                                                    {filter.name}
+                                                  </button>
+                                                  </Link>
+                                                ))
+                                              }
+                                          </div>
+                                        </div>
+                                        {/* /End replace */}
+                                      </div>
                                     </div>
                                   </div>
                                 </Transition.Child>

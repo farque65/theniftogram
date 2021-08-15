@@ -1,18 +1,11 @@
-import { useDispatchSource } from '../components/source'
+import Link from 'next/link'
 
 const filters = [
-	{name: 'Zora' },
-	{name: 'Foundation' }
+	{name: 'Zora', query: 'zora' },
+	{name: 'Foundation', query: 'foundation' }
 ]
 
 export default function Filter() {
-	const dispatch = useDispatchSource()
-
-	const setSource = (event) =>
-		dispatch({
-		type: 'SETSOURCE',
-		payload: event.target.value,
-		})
 
 	return (
 	<div className="mt-6 relative flex-1 px-4 sm:px-6">
@@ -24,14 +17,19 @@ export default function Filter() {
                 </div>
 					{
 						filters.map((filter)=> (
-							<button
-								key={filter.name}
-								type="button"
-								className="m-3 w-full justify-center rounded-md shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-400 hover:text-black hover:bg-yellow-500 sm:mt-0 sm:ml-3 sm:text-sm"
-								onClick={setSource}
-						  >
-							{filter.name}
-						  </button>
+							<Link key="home" href={{ 
+								pathname: '/',
+								query: { data: JSON.stringify(filter.query) } }}
+								passHref={true}
+							>
+								<button
+									key={filter.name}
+									type="button"
+									className="m-3 w-full justify-center rounded-md shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-400 hover:text-black hover:bg-yellow-500 sm:mt-0 sm:ml-3 sm:text-sm"
+							>
+								{filter.name}
+							</button>
+						  </Link>
 						))
 					}
 			</div>

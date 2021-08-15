@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import { get, includes } from 'lodash'
 
 import { createClient } from 'urql';
 
@@ -46,7 +46,7 @@ const client = createClient({
 
 export async function FndFetchData() {
 	const data = await client.query(tokensQuery).toPromise();
-	let tokenData = await Promise.all(data.data.nfts.map(async token=> {
+	const tokenData = await Promise.all(data.data.nfts.map(async token=> {
         let meta;
         try {
           const metaData = await fetch(`https://ipfs.io/ipfs/${token.tokenIPFSPath}`);
