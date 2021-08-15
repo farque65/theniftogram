@@ -11,11 +11,17 @@
   "dependencies": {
     "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.3",
+    "@reduxjs/toolkit": "^1.6.1",
     "graphql": "^15.5.1",
     "lodash": "^4.17.21",
     "next": "11.0.1",
+    "next-redux-wrapper": "^7.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
     "urql": "^2.0.4"
   },
   "devDependencies": {

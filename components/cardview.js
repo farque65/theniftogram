@@ -56,27 +56,25 @@ export default function CardView({data, index, source}) {
 						}
 					</div>
 					<div className="p-4">
-						<p className="text-sm font-bold">
+						<p className="text-md font-bold">
 							{descriptionShorten(get(data, 'meta.name'))}
 						</p>
-						<p className="text-sm">
+						<p className="mt-3 flex items-center text-sm">
 							{descriptionShorten(toAscii(get(data, 'meta.description')))}
 						</p>
-						<div className="mt-3 flex items-center">
-							<span className="text-sm font-semibold">
-								ab
-							</span>&nbsp;
-							<span className="font-bold text-xl">
-								45,00
-							</span>&nbsp;
-							<span className="text-sm font-semibold">
-								$
-							</span>
+						<div className="mt-1 flex items-center text-sm">
+							{get(data, 'meta.mimeType')}
 						</div>
 					</div>
 					<div className="p-4 border-t border-b text-xs text-gray-700">
-						<span className="flex items-center mb-1">
-							<i className="far fa-address-card fa-fw mr-2 text-gray-900">File Type:</i> {get(data, 'meta.mimeType')}
+						<span className="flex justify-center">
+							{
+								get(data, 'link') ?
+								<button onClick={()=> window.open(get(data, 'link'), "_blank")} type="button" className="btn-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-gray-800 text-gray-400 hover:text-yellow-500 text-white font-normal py-2 px-4 mr-1 rounded" >
+									Check It Out
+								</button> :
+								<button>n/a</button>
+							}
 						</span>
 					</div>
 				</a>

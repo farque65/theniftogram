@@ -45,7 +45,7 @@ export default function Footer() {
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   
                     <Link href="/faq">
-                      <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-green-500">   
+                      <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-yellow-500">   
                           <AnnotationIcon className="h-8 w-8 rounded-full" aria-hidden="true" />
                         </button>
                     </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
                     {/* Settings Button */}
                     <div className="ml-3 relative">
                       <div>
-                        <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-green-500">
+                        <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-yellow-500">
                           <FilterIcon className="h-8 w-8 rounded-full" aria-hidden="true" onClick={() => setOpen(true)}/>
                         </button>
                       </div>

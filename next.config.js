@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['drive.google.com', 'ipfs.fleek.co'],
+    domains: ['drive.google.com', 'ipfs.fleek.co', 'ipfs.io'],
   }
 }
