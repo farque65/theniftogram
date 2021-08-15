@@ -44,12 +44,12 @@ export default function Nav() {
             <div className="relative flex items-center justify-between h-16">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start text-black">
                 <div className="flex-shrink-0 flex items-center bg-white rounded-full p-2">
-                  <Link href="/">
+                  <Link href="/" alt="home">
                     <a>
                       <CameraIcon className="block lg:hidden h-8 w-8" alt="Niftygram" />
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/" alt="home">
                     <a>
                       <CameraIcon className="hidden lg:block h-8 w-8" alt="Niftygram" />
                     </a>
@@ -58,8 +58,8 @@ export default function Nav() {
               </div>
               <div className="hidden md:block">
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                  <Link href="/faq">
-                    <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-green-500">   
+                  <Link href="/faq" alt="faq">
+                    <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-yellow-500">   
                       <AnnotationIcon className="h-8 w-8 rounded-full" aria-hidden="true" />
                     </button>
                   </Link>
@@ -67,7 +67,7 @@ export default function Nav() {
                   {/* Settings Button */}
                   <div className="ml-3 relative">
                         <div>
-                          <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-green-500">
+                          <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 text-gray-400 hover:text-yellow-500">
                             <FilterIcon className="h-8 w-8 rounded-full" aria-hidden="true" onClick={() => setOpen(true)}/>
                           </button>
                         </div>
