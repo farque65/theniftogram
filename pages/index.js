@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import CardView from '../components/cardview'
