@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import CardView from '../components/cardview'
@@ -34,9 +35,10 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps(context) {
-  console.log('view server side ', context);
-  const data = await FetchData('zora')
+const source = 'zora';
+
+export async function getServerSideProps() {
+  const data = await FetchData(source)
   return {
     props: {
       tokens: JSON.parse(JSON.stringify(data))
