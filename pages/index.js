@@ -2,7 +2,7 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 import CardView from '../components/cardview'
 import Head from 'next/head'
-import { get, isEmpty } from 'lodash'
+import { get } from 'lodash'
 
 import { FetchData } from '../components/middleware'
 import { useSource } from '../components/source'
@@ -35,7 +35,7 @@ export default function Home(props) {
 
 export async function getServerSideProps(content) {
   const source = get(content, 'query.data') || 'zora';
-  let editedSource = source.replaceAll('"','');
+  let editedSource = source.replace(/['"]+/g, '');
   const data = await FetchData(editedSource)
   return {
     props: {
