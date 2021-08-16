@@ -1,6 +1,8 @@
 # The Niftogram 
 An NFT marketplace aggregator. Currently only Zora and Foundation marketplace data is pulled in.
 
+View the [site](https://vibrant-kowalevski-7f8fe1.netlify.app/)
+
 # How does it work?
 Nextjs getServerSideProps calls a fetch data function that pulls in NFT data from a subgraph api built on the graph protocol. There are subgraphs available for use on the [Graph Explorer](https://thegraph.com/explorer/) 
 
